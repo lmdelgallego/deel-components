@@ -1,0 +1,111 @@
+.d-autocomplete{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1
+}
+
+.d-autocomplete .d-autocomplete_input{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 16px;
+    outline: none;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    background-color: #fff;
+    appearance: none;
+    color: #606266;
+}
+
+.d-autocomplete .d-autocomplete_input:focus{
+    border-color: #409eff;
+}
+
+.d-autocomplete_suggestions{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    margin-top: 4px;
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    overflow: auto;
+    max-height: 300px;
+    box-sizing: border-box;
+}
+
+.d-autocomplete_loading{
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    border-radius: 50%;
+    border: 2px solid #c0c4cc;
+    border-top-color: #409eff;
+    -webkit-animation: d-autocomplete-loading 1s linear infinite;
+    animation: d-autocomplete-loading 1s linear infinite;
+}
+
+.d-autocomplete_suggestions li{
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #606266;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+
+.d-autocomplete_suggestions li img{
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.d-autocomplete_suggestions li:hover{
+    color: #409eff;
+    background-color: #ecf5ff;
+}
+
+.d-autocomplete_suggestions li.d-autocomplete_suggestion-active{
+    color: #fff;
+    background-color: #409eff;
+}
+
+.d-autocomplete_suggestions li.d-autocomplete_suggestion-active:hover{
+    color: #fff;
+    background-color: #409eff;
+}
+
+.d-autocomplete_suggestions li.d-autocomplete_suggestion-disabled{
+    color: #c0c4cc;
+    cursor: not-allowed;
+}
+
+.d-autocomplete_suggestions li.d-autocomplete_suggestion-disabled:hover{
+    color: #c0c4cc;
+    background-color: #fff;
+}
+
+.d-autocomplete_suggestions li.d-autocomplete_suggestion-loading{
+    cursor: default;
+}
+
