@@ -1,10 +1,11 @@
+import { FC } from 'react';
 
 interface HighlightTextProps {
   text: string;
   query: string;
 }
 
-export const HighlightText = ({ text, query }: HighlightTextProps) => {
+export const HighlightText: FC<HighlightTextProps> = ({ text, query }) => {
 
   const highlightMatch = (text: string, query: string) => {
 
@@ -14,11 +15,9 @@ export const HighlightText = ({ text, query }: HighlightTextProps) => {
     const before = text.slice(0, index);
     const match = text.slice(index, index + query.length);
     const after = text.slice(index + query.length);
-    return {
-      __html: `${before}<strong class="d-highlight">${match}</strong>${after}`
-    }
+    return `${before}<strong class="d-highlight">${match}</strong>${after}`;
   }
 
-  return <span dangerouslySetInnerHTML={highlightMatch(text, query)} />;
+  return <span dangerouslySetInnerHTML={{ __html: highlightMatch(text, query)}} />;
 
 }
