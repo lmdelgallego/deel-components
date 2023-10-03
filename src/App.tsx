@@ -3,16 +3,6 @@ import { AutoComplete } from './components'
 import './App.css'
 import { ICharacter } from './hooks/useApi';
 
-const mockData = [
-  'Apple',
-  'Banana',
-  'Cherry',
-  'Grapes',
-  'Orange',
-  'Pineapple',
-  'Strawberry',
-];
-
 function App() {
 
   const [characterSelected, setCharacterSelected] = useState<ICharacter | null >(null)
