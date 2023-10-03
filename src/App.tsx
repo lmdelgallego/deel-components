@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { AutoComplete } from './components'
+import { AutoComplete, CharacterCard } from './components'
 import './App.css'
 import { ICharacter } from './hooks/useApi';
 
@@ -16,10 +16,7 @@ function App() {
       <h1>Rick&Morty<br/><small>Search your favorite character</small></h1>
       <AutoComplete onChange={handlerOnChange} />
       {characterSelected && (
-        <div className="d-app_card">
-          <img src={characterSelected.image}  />
-          <span>{characterSelected.name}</span>
-        </div>
+        <CharacterCard character={characterSelected} />
       )}
     </>
   )
