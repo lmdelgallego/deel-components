@@ -3,6 +3,7 @@ import { useApi, useDebounce } from '../../hooks';
 import { ICharacter } from '../../hooks/useApi';
 
 import './AutoComplete.css'
+import { HighlightText } from '..';
 
 interface AutoCompleteProps {
   onChange: (value: ICharacter) => void;
@@ -39,7 +40,7 @@ export const AutoComplete = ({ onChange }: AutoCompleteProps) => {
           {suggestions.map((item) => (
             <li key={item.id} onClick={() => handlerClick(item)}>
               <img src={item.image} alt={item.name} />
-              {item.name}
+              <HighlightText text={item.name} query={value} />
             </li>
           ))}
         </ul>
