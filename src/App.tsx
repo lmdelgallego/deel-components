@@ -13,6 +13,7 @@ function App() {
 
   return (
     <>
+      <h1>Rick&Morty<br/><small>Search your favorite character</small></h1>
       <AutoComplete onChange={handlerOnChange} />
       {characterSelected && (
         <div className="d-app_card">
